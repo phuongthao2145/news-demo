@@ -16,11 +16,11 @@ include "header.php" ?>
                         // hiển thị 5 sản phẩm trên 1 trang
                         $count = 2;
                         // Lấy số trang trên thanh địa chỉ
-                        $page = isset($_GET['page'])?$_GET['page']:1;
+                        $page = isset($_GET['page']) ? $_GET['page'] : 1;
                         // Tính tổng số dòng, ví dụ kết quả là 18
                         $total = count($item->getAllItemsByCate($cate_id));
                         // lấy đường dẫn đến file hiện hành
-                        $url = $_SERVER['PHP_SELF']."?cate-id=".$cate_id;
+                        $url = $_SERVER['PHP_SELF'] . "?cate-id=" . $cate_id;
                     ?>
                         <div class="col-12">
                             <div class="section-title">
@@ -56,13 +56,13 @@ include "header.php" ?>
                                     </div>
                                 </div>
                             </div>
-                    <?php
+                        <?php
                         endforeach;
                         ?>
-                        <div class="pagination col-12">
+                        <div class="pagination offset-8 mt-3">
                             <?php echo $item->paginate($url, $total, $page, $count, 1) ?>
                         </div>
-                        <?php
+                    <?php
                     endif
                     ?>
                 </div>

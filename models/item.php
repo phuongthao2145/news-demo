@@ -84,15 +84,21 @@ class Item extends Db
         $prev = "";
         $next = "";
         for ($j = $from; $j <= $to; $j++) {
-            $link = $link . "<a class='badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2' href = '$url&page=$j'> $j </a>";
+            if($page == $j){
+                $link = $link . "<a class='badge badge-secondary text-uppercase font-weight-semi-bold p-1 mr-2' href = '$url&page=$j'> $j </a>";
+
+            }
+            else{
+                $link = $link . "<a class='badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2' href = '$url&page=$j'> $j </a>";
+            }
         }
         if ($page > 1) {
             $prevPage = $page - 1;
-            $prev = "<a class='badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2' href='$url&page=$prevPage'> Prev Link </a>";
+            $prev = "<a class='badge text-secondary text-uppercase font-weight-semi-bold p-1 mr-2' href='$url&page=$prevPage'> Prev Link </a>";
         }
         if ($page < $totalLinks) {
             $nextPage = $page + 1;
-            $next = "<a class='badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2' href ='$url&page=$nextPage'>
+            $next = "<a class='badge text-secondary text-uppercase font-weight-semi-bold p-1 mr-2' href ='$url&page=$nextPage'>
             Next Link </a>";
         }
         return $prev . $link . $next;
