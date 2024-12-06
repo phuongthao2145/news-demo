@@ -19,7 +19,7 @@ include "sidebar.php";
                     </div>
                     <div class="widget-content nopadding">
                         <!-- BEGIN FORM -->
-                        <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
+                        <form action="additem.php" method="post" class="form-horizontal" enctype="multipart/form-data">
                             <div class="control-group">
                                 <label class="control-label">Title </label>
                                 <div class="controls">
@@ -51,8 +51,9 @@ include "sidebar.php";
                                     category</label>
                                 <div class="controls">
                                     <select name="cate" id="cate">
-                                        <option value="1">The Gioi</option>
-                                        <option value="2">The Thao</option>
+                                        <?php foreach($getAllCates as $value): ?>
+                                        <option value="<?php echo $value['id'] ?>"><?php echo $value['name'] ?></option>
+                                        <?php endforeach ?>
                                     </select> *
                                 </div>
                             </div>
@@ -77,8 +78,9 @@ include "sidebar.php";
                                 <label class="control-label">Author</label>
                                 <div class="controls">
                                     <select name="author" id="cate">
-                                        <option value="1">The Gioi</option>
-                                        <option value="2">The Thao</option>
+                                        <?php foreach($getAllAuthors as $value): ?>
+                                        <option value="<?php echo $value['id'] ?>"><?php echo $value['name'] ?></option>
+                                        <?php endforeach ?>
                                     </select> *
                                 </div>
                             </div>

@@ -16,7 +16,7 @@ include "sidebar.php";
             <div class="span12">
                 <div class="widget-box">
                     <div class="widget-title"> <span class="icon"><a
-                                href="form.html"> <i class="icon-plus"></i>
+                                href="form_add_item.php"> <i class="icon-plus"></i>
                             </a></span>
                         <h5>Items</h5>
                     </div>
@@ -38,27 +38,27 @@ include "sidebar.php";
                             </thead>
                             <tbody>
                                 <?php
-                                foreach($getAllItems as $value):
+                                foreach ($getAllItems as $value):
                                 ?>
-                                <tr class="">
-                                    <td width="250">
-                                        <img
-                                            src="../img/<?php echo $value['image'] ?>" />
-                                    </td>
-                                    <td><?php echo $value['title'] ?></td>
-                                    <td><?php echo $value['excerpt'] ?></td>
-                                    <td><?php echo $value['catename'] ?></td>
-                                    <td><?php echo $value['featured'] ?></td>
-                                    <td><?php echo $value['views'] ?></td>
-                                    <td><?php echo $value['authname'] ?></td>
-                                    <td><?php echo $value['created_at'] ?></td>
-                                    <td>
-                                        <a href="#45" class="btn
+                                    <tr class="">
+                                        <td width="250">
+                                            <img
+                                                src="../img/<?php echo $value['image'] ?>" />
+                                        </td>
+                                        <td><?php echo $value['title'] ?></td>
+                                        <td><?php echo $value['excerpt'] ?></td>
+                                        <td><?php echo $value['catename'] ?></td>
+                                        <td><?php echo $value['featured'] ?></td>
+                                        <td><?php echo $value['views'] ?></td>
+                                        <td><?php echo $value['authname'] ?></td>
+                                        <td><?php echo $value['created_at'] ?></td>
+                                        <td>
+                                            <a href="#45" class="btn
                                                     btn-success btn-mini">Edit</a>
-                                        <a href="#45" class="btn
+                                            <a href="delete.php?id=<?php echo $value['id'] ?>" class="btn
                                                     btn-danger btn-mini">Delete</a>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
                                 <?php endforeach ?>
                             </tbody>
                         </table>

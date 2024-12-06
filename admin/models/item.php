@@ -4,7 +4,7 @@ class Item extends Db
     //Hien thi danh sach cac item theo thu tu moi nhat
     function getAllItems()
     {
-        $sql = self::$connection->prepare("SELECT `title`,`excerpt`,`content`,`image`,`categories`.`name` AS catename,`author`.`name` AS authname,`featured`,`views`,`created_at`
+        $sql = self::$connection->prepare("SELECT `items`.`id`,`title`,`excerpt`,`content`,`image`,`categories`.`name` AS catename,`author`.`name` AS authname,`featured`,`views`,`created_at`
                                             FROM `items`,`categories`,`author`
                                             WHERE `items`.`category` = `categories`.`id`
                                             AND `items`.`author` = `author`.`id`
@@ -51,5 +51,17 @@ class Item extends Db
             }
         }
         return $link;
+    }
+    function delete($id){
+        $sql = self::$connection->prepare("DELETE FROM `items` WHERE `id`=?");
+        $sql->bind_param("i",$id);
+        return $sql->execute();
+    }
+    function addItem($title,$excerpt,$content,$image,$category,$featured,$views,$author){
+        $sql = self::$connection->prepare("INSERT 
+        INTO `items`(`title`, `excerpt`, `content`, `image`, `category`, `featured`, `views`, `author`)
+        VALUES (?,?,?,?,?,?,?,?)");
+        $sql->bind_param("ssssiiii",$title,$excerpt,$content,$image,$category,$featured,$views,$author);
+        return $sql->execute();
     }
 }

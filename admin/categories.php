@@ -13,7 +13,7 @@ include "sidebar.php";
         <div class="row-fluid">
             <div class="span12">
                 <div class="widget-box">
-                    <div class="widget-title"> <span class="icon"><a href="form.html"> <i class="icon-plus"></i>
+                    <div class="widget-title"> <span class="icon"><a href="form_add_category.php"> <i class="icon-plus"></i>
                             </a></span>
                         <h5>Categories</h5>
                     </div>
