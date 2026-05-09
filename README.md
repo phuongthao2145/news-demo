@@ -31,4 +31,4 @@ Dự án bao gồm các bảng chính:
 
 1. **Clone dự án:**
    ```bash
-   git clone [https://github.com/username/ten-du-an.git](https://github.com/username/ten-du-an.git)
+   git clone [https://github.com/username/ten-du-an.git](https://github.com/phuongthao2145/news-demo.git)](https://github.com/phuongthao2145/news-demo.git)
